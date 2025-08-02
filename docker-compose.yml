@@ -17,11 +17,11 @@ services:
     container_name: rclone
     restart: unless-stopped
     environment:
-      TZ: Europe/Berlin
-      PUID: 1000
-      PGID: 1000
+      TZ: Europe/London
+      PUID: 99
+      PGID: 100
     volumes:
-      - /mnt/zurg:/data:rshared # CHANGE /mnt/zurg WITH YOUR PREFERRED MOUNT PATH
+      - /mnt/user/zurg:/data:rshared
       - ./rclone.conf:/config/rclone/rclone.conf
     cap_add:
       - SYS_ADMIN
